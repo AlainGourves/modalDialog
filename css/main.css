@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+:root {
+  --color-primary: rgb(107, 187, 227);
+  --color-secondary: rgb(255, 51, 51);
+  --color-tertiary: rgb(153, 153, 153);
+}
+
+* {
+  transition: color .25s ease-out,   
+              background-color .25s ease-out,
+              opacity .25s ease-out;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 300;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f5f4f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/************************************************* Classes *************************/
+.container {
+  scroll-snap-type: y proximity;
+  overflow-x: hidden;
+}
+
+.btn {
+  padding: .5rem .8rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.box{
+  width: 40vw;
+  height: 50vh;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2em;
+  background: greenyellow;
+}
