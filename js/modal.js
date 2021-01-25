@@ -1,11 +1,10 @@
 class VidameModal{
     constructor(el){
         this.el = document.querySelector(el);
-        this.closeDiv = this.el.querySelector('div.modal-close');
+        this.closeDiv = this.el.querySelector('span.modal-close');
         if (!this.closeDiv){
             this.closeDiv = document.createElement('div');
             this.closeDiv.classList.add('modal-close');
-            this.closeDiv.innerHTML = '<span>X</span>';
             this.el.prepend(this.closeDiv);
         }
         this.overlay = document.querySelector('#overlay');

@@ -1,8 +1,8 @@
-body.modal-on{
+body.modal-on {
     overflow: hidden;
 }
 
-.modal{
+.modal {
     position: absolute;
     display: none;
     opacity: 0;
@@ -10,56 +10,47 @@ body.modal-on{
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.75);
 }
 
-.modal-right{
+.modal-right {
     right: -100%;
     transition: right .5s ease-in-out,
-                opacity .25s ease-in-out .25s;
+        opacity .25s ease-in-out .25s;
 }
 
-.modal-left{
+.modal-left {
     left: -100%;
     transition: left .5s ease-in-out,
-                opacity .25s ease-in-out .25s;
+        opacity .25s ease-in-out .25s;
 }
 
-.modal-top{
+.modal-top {
     top: -100%;
     transition: top .5s ease-in-out,
-                opacity .25s ease-in-out .25s;
+        opacity .25s ease-in-out .25s;
 }
 
-.modal-bottom{
+.modal-bottom {
     bottom: -100%;
     transition: bottom .5s ease-in-out,
-                opacity .25s ease-in-out .25s;
+        opacity .25s ease-in-out .25s;
 }
 
-.modal-close span{
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    font-size: 2em;
-    color: red;
-    cursor: pointer;
-}
-
-.modal-open{
+.modal-open {
     opacity: 1;
 }
 
-.modal-open.modal-right{
+.modal-open.modal-right {
     right: 0;
 }
 
-.modal-open.modal-left{
+.modal-open.modal-left {
     left: 0;
 }
 
-.modal-open.modal-top{
+.modal-open.modal-top {
     top: 0;
 }
 
-.modal-open.modal-bottom{
+.modal-open.modal-bottom {
     bottom: 0;
 }
 
@@ -72,5 +63,21 @@ body.modal-on{
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 200;
-  }
-  
+}
+
+.modal-close {
+    --svg-color: red;
+    position: absolute;
+    display: block;
+    width: 2em;
+    height: 2em;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    background: var(--svg-color);
+    -webkit-mask-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Cpath fill="black" d="M15.898 4.045a.698.698 0 00-.986 0l-4.71 4.711-4.709-4.711a.698.698 0 00-.986.986l4.709 4.711-4.71 4.711a.698.698 0 00.985.986l4.711-4.711 4.71 4.711a.695.695 0 00.494.203.694.694 0 00.492-1.189l-4.711-4.711 4.711-4.711a.694.694 0 000-.986z"/%3E%3C/svg%3E');
+    mask-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Cpath fill="black" d="M15.898 4.045a.698.698 0 00-.986 0l-4.71 4.711-4.709-4.711a.698.698 0 00-.986.986l4.709 4.711-4.71 4.711a.698.698 0 00.985.986l4.711-4.711 4.71 4.711a.695.695 0 00.494.203.694.694 0 00.492-1.189l-4.711-4.711 4.711-4.711a.694.694 0 000-.986z"/%3E%3C/svg%3E');
+}
+.modal-close:hover{
+    --svg-color: blue;
+}
