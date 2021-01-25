@@ -14,6 +14,8 @@ class VidameModal{
             this.overlay.id = "overlay";
             document.body.append(this.overlay);
         }
+        this.escListener = this.onEscKey.bind(this);
+        this.closeDivEvt = this.close.bind(this);
     }
 
     open(){
@@ -22,29 +24,33 @@ class VidameModal{
         window.setTimeout(_=>{
             this.overlay.style.display = 'block';
             this.el.classList.add('modal-open');
-        },5);
+        },50);
         this.overlay.addEventListener(
             'click',
-            this.close.bind(this),
-            {once: true}
+            this.closeDivEvt
         );
         this.closeDiv.addEventListener(
             'click',
-            this.close.bind(this)
+            this.closeDivEvt
         );
         window.addEventListener(
             'keydown',
-            this.onEscKey.bind(this)
+            this.escListener
         );
     }
             
     close(){
-        this.el.classList.remove('modal-open');
         this.closeDiv.removeEventListener(
             'click',
-            this.close.bind(this)
+            this.closeDivEvt
+        );
+        this.overlay.removeEventListener(
+            'click',
+            this.closeDivEvt
         );
         let that = this;
+        window.removeEventListener('keydown', this.escListener);
+        this.el.classList.remove('modal-open');
         this.el.addEventListener('transitionend', e =>{
             that.el.style.display = 'none';
             that.overlay.style.display = 'none';
@@ -55,8 +61,6 @@ class VidameModal{
     onEscKey(e){
         if (e.key === "Escape") {
             this.close();
-            window.removeEventListener('keydown', this.onEscKey.bind(this));
-            // TODO pas sûr que ça fonctionne !!!
         }
     }
 }
