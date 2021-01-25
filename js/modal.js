@@ -1,11 +1,13 @@
 class VidameModal{
     constructor(el){
         this.el = document.querySelector(el);
-        this.el.closeDiv = document.createElement('div');
-        this.el.closeDiv.innerHTML = '<span>X</span>';
-        this.el.closeDiv.classList.add('modal-close');
-        this.el.prepend(this.el.closeDiv);
-        this.el.closeDiv.addEventListener('click', this.close.bind(this));
+        this.closeDiv = this.el.querySelector('div.modal-close');
+        if (!this.closeDiv){
+            this.closeDiv = document.createElement('div');
+            this.closeDiv.classList.add('modal-close');
+            this.closeDiv.innerHTML = '<span>X</span>';
+            this.el.prepend(this.closeDiv);
+        }
         this.overlay = document.querySelector('#overlay');
         if (!this.overlay){
             this.overlay = document.createElement('div');
@@ -26,6 +28,10 @@ class VidameModal{
             this.close.bind(this),
             {once: true}
         );
+        this.closeDiv.addEventListener(
+            'click',
+            this.close.bind(this)
+        );
         window.addEventListener(
             'keydown',
             this.onEscKey.bind(this)
@@ -34,6 +40,10 @@ class VidameModal{
             
     close(){
         this.el.classList.remove('modal-open');
+        this.closeDiv.removeEventListener(
+            'click',
+            this.close.bind(this)
+        );
         let that = this;
         this.el.addEventListener('transitionend', e =>{
             that.el.style.display = 'none';
@@ -46,6 +56,7 @@ class VidameModal{
         if (e.key === "Escape") {
             this.close();
             window.removeEventListener('keydown', this.onEscKey.bind(this));
+            // TODO pas sûr que ça fonctionne !!!
         }
     }
 }
