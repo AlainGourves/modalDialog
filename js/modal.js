@@ -1,13 +1,11 @@
 class VidameModal{
     constructor(el){
-        console.log(el)
         this.el = document.querySelector(el);
-        console.log(this.el)
         this.overlay = document.querySelector('#overlay');
         if (!this.overlay){
             this.overlay = document.createElement('DIV');
             this.overlay.id = "overlay";
-            document.body.appendChild(this.overlay);
+            document.body.append(this.overlay);
         }
     }
 
@@ -47,15 +45,20 @@ class VidameModal{
     }
 }
 
-let a;
+let a, b;
 let btn1 = document.querySelector('.btns button.btn:first-of-type');
 let btn2 = document.querySelector('.btns button.btn:last-of-type');
 
 window.addEventListener("load", _ => {
     a = new VidameModal('.box');
+    b = new VidameModal('.box2');
 
     btn1.addEventListener('click', _ => {
         a.open()
+    });
+
+    btn2.addEventListener('click', _ => {
+        b.open()
     });
 
 });

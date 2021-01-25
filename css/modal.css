@@ -1,20 +1,56 @@
 body.modal-on{
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .modal{
     position: absolute;
     display: none;
-    right: -100%;
     opacity: 0;
     z-index: 999;
+}
+
+.modal-right{
+    right: -100%;
     transition: right .5s ease-in-out,
                 opacity .25s ease-in-out .25s;
 }
 
+.modal-left{
+    left: -100%;
+    transition: left .5s ease-in-out,
+                opacity .25s ease-in-out .25s;
+}
+
+.modal-top{
+    top: -100%;
+    transition: top .5s ease-in-out,
+                opacity .25s ease-in-out .25s;
+}
+
+.modal-bottom{
+    bottom: -100%;
+    transition: bottom .5s ease-in-out,
+                opacity .25s ease-in-out .25s;
+}
+
 .modal-open{
-    right: 0;
     opacity: 1;
+}
+
+.modal-open.modal-right{
+    right: 0;
+}
+
+.modal-open.modal-left{
+    left: 0;
+}
+
+.modal-open.modal-top{
+    top: 0;
+}
+
+.modal-open.modal-bottom{
+    bottom: 0;
 }
 
 #overlay {

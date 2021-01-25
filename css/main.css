@@ -66,3 +66,12 @@ body {
   padding: 2em;
   background: greenyellow;
 }
+
+.box2{
+  width: 30vw;
+  height: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2em;
+  background: lightpink;
+}
