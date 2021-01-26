@@ -41,9 +41,11 @@ main p{
   display: flex;
   width: 100%;
   top: 35vh;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  left: 50vw;
+}
+
+.btns .btn{
+  transform: translateX(-50%);
 }
 
 .btn {
