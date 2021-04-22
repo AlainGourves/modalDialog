@@ -1,4 +1,4 @@
-class VidameModal{
+class AgModal{
     constructor(el){
         this.el = document.querySelector(el);
         this.closeDiv = this.el.querySelector('span.modal-close');

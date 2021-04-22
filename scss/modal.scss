@@ -20,7 +20,7 @@ body.modal-on{
     &-right{
         right: -100%;
         transition: right .5s ease-in-out,
-            opacity .25s ease-in-out .25s;
+                    opacity .25s ease-in-out .25s;
     }
 
     &-left{
@@ -32,13 +32,13 @@ body.modal-on{
     &-top{
         top: -100%;
         transition: top .5s ease-in-out,
-            opacity .25s ease-in-out .25s;
+                    opacity .25s ease-in-out .25s;
     }
 
     &-bottom{
         bottom: -100%;
         transition: bottom .5s ease-in-out,
-            opacity .25s ease-in-out .25s;
+                    opacity .25s ease-in-out .25s;
     }
 
 
