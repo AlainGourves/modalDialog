@@ -26,15 +26,18 @@ class AgModal{
         },50);
         this.overlay.addEventListener(
             'click',
-            this.closeDivEvt
+            this.closeDivEvt,
+            false
         );
         this.closeDiv.addEventListener(
             'click',
-            this.closeDivEvt
+            this.closeDivEvt,
+            false
         );
         window.addEventListener(
             'keydown',
-            this.escListener
+            this.escListener,
+            false
         );
     }
             
